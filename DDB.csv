@@ -1,32 +1,32 @@
-id,label,file,title_en,object_type_en,period_en,site_en,city_en,prefecture_en,country_en,institution_en
-,0B-1,models/0B-1.glb,0B-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,0B-2,models/0B-2.glb,0B-2,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,1A-1,models/1A-1.glb,1A-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,-1B-1,models/-1B-1.glb,-1B-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2A-1_3B-7,models/2A-1_3B-7.glb,2A-1_3B-7,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2B-3,models/2B-3.glb,2B-3,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2B-9,models/2B-9.glb,2B-9,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2B-12,models/2B-12.glb,2B-12,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2D-1,models/2D-1.glb,2D-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2D-3,models/2D-3.glb,2D-3,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,2D-4,models/2D-4.glb,2D-4,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3B-1,models/3B-1.glb,3B-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3B-3,models/3B-3.glb,3B-3,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3B-6,models/3B-6.glb,3B-6,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3C-5,models/3C-5.glb,3C-5,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3D-11,models/3D-11.glb,3D-11,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,3D-13,models/3D-13.glb,3D-13,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,4B-5,models/4B-5.glb,4B-5,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,4B-6,models/4B-6.glb,4B-6,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,4B-14-1,models/4B-14-1.glb,4B-14-1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,4D-10,models/4D-10.glb,4D-10,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,5B-1_4B-2,models/5B-1~3+4B-2.glb,5B-1_4B-2,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,5B-3,models/5B-3.glb,5B-3,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,5D-4,models/5D-4.glb,5D-4,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
-,AN1,,AN1,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN2,,AN2,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN3,,AN3,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN4,,AN4,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN5,,AN5,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN6,,AN6,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
-,AN7,,AN7,Balustrade,Bayon,Ta Nei,Angkor,Siem Reap,Cambodia,
+id,label,file,title_en,object_type_en,period_en,Building_en,site_en,city_en,prefecture_en,country_en,institution_en
+,0B-1,models/0B-1.glb,0B-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,0B-2,models/0B-2.glb,0B-2,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,1A-1,models/1A-1.glb,1A-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,-1B-1,models/-1B-1.glb,-1B-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2A-1_3B-7,models/2A-1_3B-7.glb,2A-1_3B-7,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2B-3,models/2B-3.glb,2B-3,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2B-9,models/2B-9.glb,2B-9,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2B-12,models/2B-12.glb,2B-12,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2D-1,models/2D-1.glb,2D-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2D-3,models/2D-3.glb,2D-3,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,2D-4,models/2D-4.glb,2D-4,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3B-1,models/3B-1.glb,3B-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3B-3,models/3B-3.glb,3B-3,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3B-6,models/3B-6.glb,3B-6,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3C-5,models/3C-5.glb,3C-5,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3D-11,models/3D-11.glb,3D-11,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,3D-13,models/3D-13.glb,3D-13,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,4B-5,models/4B-5.glb,4B-5,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,4B-6,models/4B-6.glb,4B-6,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,4B-14-1,models/4B-14-1.glb,4B-14-1,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,4D-10,models/4D-10.glb,4D-10,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,5B-1_4B-2,models/5B-1~3+4B-2.glb,5B-1_4B-2,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,5B-3,models/5B-3.glb,5B-3,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,5D-4,models/5D-4.glb,5D-4,Balustrade,Bayon,Cruciform Terrace,Ta Nei,Angkor,Siem Reap,Cambodia,Tokyo National Rresearch Institute for Cultual Properties & APSARA National Authority
+,AN1,,AN1,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN2,,AN2,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN3,,AN3,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN4,,AN4,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN5,,AN5,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN6,,AN6,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
+,AN7,,AN7,Balustrade,Bayon,,Ta Nei,Angkor,Siem Reap,Cambodia,
