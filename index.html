@@ -17,7 +17,6 @@ body {
   font-family: sans-serif;
 }
 
-/* left-side 3D model viewer */
 #viewer-area {
   width: 70%;
   height: 100%;
@@ -29,13 +28,25 @@ model-viewer {
   height: 100%;
 }
 
-/* right-side description */
 #info-area {
   width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+#text-panel {
+  height: 60%;
   padding: 20px;
   overflow-y: auto;
-  background: #f5f5f5;
   box-sizing: border-box;
+}
+
+#map-panel {
+  height: 40%;
+  border-top: 1px solid #ccc;
+  background: #e9e9e9;
 }
 
 label {
@@ -48,12 +59,12 @@ label {
 select {
   width: 100%;
   padding: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 16px;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 table {
@@ -81,28 +92,32 @@ td {
 
 <body>
 
-<!-- left side -->
 <div id="viewer-area">
   <model-viewer
   id="viewer"
   src=""
   camera-controls
   auto-rotate
-  shadow-intensity="1"
-  camera-orbit="45deg 75deg 6m"
-  field-of-view="30deg"
-  ar>
+  ar
+  ar-modes="scene-viewer webxr quick-look"
+  ar-scale="fixed"
+  xr-environment>
 </model-viewer>
 </div>
 
-<!-- right side -->
 <div id="info-area">
-  <label for="modelSelect">Model</label>
-  <select id="modelSelect"></select>
 
-  <div id="description">
-    <p>Loading CSV data...</p>
+  <div id="text-panel">
+    <label for="modelSelect">Model</label>
+    <select id="modelSelect"></select>
+
+    <div id="description">
+      <p>Loading CSV data...</p>
+    </div>
   </div>
+
+  <div id="map-panel"></div>
+
 </div>
 
 <script>
@@ -124,7 +139,6 @@ fetch("DDB.csv")
     setupModelSelector(models);
 
     if (models.length > 0) {
-
       showModel(models[0]);
     } else {
       description.innerHTML = "<p>No model data found in CSV.</p>";
@@ -134,7 +148,6 @@ fetch("DDB.csv")
     console.error("CSV loading error:", error);
     description.innerHTML = "<p>Could not load CSV data.</p>";
   });
-
 
 function setupModelSelector(models) {
   modelSelect.innerHTML = "";
@@ -147,9 +160,7 @@ function setupModelSelector(models) {
   });
 }
 
-
 function showModel(model) {
-
   viewer.src = model.file;
 
   description.innerHTML = `
@@ -158,7 +169,7 @@ function showModel(model) {
     <table>
       <tr>
         <th>Object type</th>
-        <td>${escapeHTML(model.object_type_en)}</td>
+        <td>${escapeHTML(model.object_type)}</td>
       </tr>
       <tr>
         <th>Period</th>
@@ -196,7 +207,7 @@ modelSelect.addEventListener("change", function() {
 
 function parseCSV(text) {
   const rows = text.trim().split(/\r?\n/);
-  const headers = splitCSVLine(rows).map(h => h.trim());
+  const headers = splitCSVLine(rows[0]).map(h => h.trim());
 
   return rows.slice(1)
     .filter(row => row.trim() !== "")
@@ -237,7 +248,6 @@ function splitCSVLine(line) {
   result.push(current);
   return result;
 }
-
 
 function escapeHTML(str) {
   return String(str || "")
