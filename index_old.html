@@ -17,7 +17,6 @@ body {
   font-family: sans-serif;
 }
 
-/* left-side 3D model viewer */
 #viewer-area {
   width: 70%;
   height: 100%;
@@ -29,12 +28,12 @@ model-viewer {
   height: 100%;
 }
 
-
 #info-area {
   width: 30%;
+  height: 100%;
+  background: #f5f5f5;
   padding: 20px;
   overflow-y: auto;
-  background: #f5f5f5;
   box-sizing: border-box;
 }
 
@@ -48,12 +47,12 @@ label {
 select {
   width: 100%;
   padding: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 16px;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 table {
@@ -81,21 +80,19 @@ td {
 
 <body>
 
-<!-- left side -->
 <div id="viewer-area">
   <model-viewer
   id="viewer"
   src=""
   camera-controls
   auto-rotate
-  shadow-intensity="1"
-  camera-orbit="45deg 75deg 6m"
-  field-of-view="30deg"
-  ar>
+  ar
+  ar-modes="scene-viewer webxr quick-look"
+  ar-scale="fixed"
+  xr-environment>
 </model-viewer>
 </div>
 
-<!-- right side -->
 <div id="info-area">
   <label for="modelSelect">Model</label>
   <select id="modelSelect"></select>
@@ -112,7 +109,6 @@ const description = document.getElementById("description");
 
 let models = [];
 
-
 fetch("DDB.csv")
   .then(response => {
     if (!response.ok) {
@@ -125,7 +121,6 @@ fetch("DDB.csv")
     setupModelSelector(models);
 
     if (models.length > 0) {
-
       showModel(models[0]);
     } else {
       description.innerHTML = "<p>No model data found in CSV.</p>";
@@ -141,27 +136,22 @@ function setupModelSelector(models) {
 
   models.forEach(model => {
     const option = document.createElement("option");
-
-    const identifier = model.label || model.id || model.file;
-    option.value = identifier;
-    option.textContent = identifier;
+    option.value = model.label || model.file;
+    option.textContent = model.label || model.file;
     modelSelect.appendChild(option);
   });
 }
 
-
 function showModel(model) {
-
-  viewer.src = model.file || "";
-
+  viewer.src = model.file;
 
   description.innerHTML = `
-    <h2>${escapeHTML(model.title_en || model.label || model.id)}</h2>
+    <h2>${escapeHTML(model.title_en || model.label)}</h2>
 
     <table>
       <tr>
         <th>Object type</th>
-        <td>${escapeHTML(model.object_type_en)}</td>
+        <td>${escapeHTML(model.object_type)}</td>
       </tr>
       <tr>
         <th>Period</th>
@@ -191,13 +181,11 @@ function showModel(model) {
   `;
 }
 
-
 modelSelect.addEventListener("change", function() {
-  const selected = models.find(model => (model.label || model.id || model.file) === this.value);
+  const selected = models.find(model => (model.label || model.file) === this.value);
   if (!selected) return;
   showModel(selected);
 });
-
 
 function parseCSV(text) {
   const rows = text.trim().split(/\r?\n/);
@@ -218,7 +206,6 @@ function parseCSV(text) {
 }
 
 function splitCSVLine(line) {
-  const delimiter = line.includes("\t") ? "\t" : ",";
   const result = [];
   let current = "";
   let inQuotes = false;
@@ -232,7 +219,7 @@ function splitCSVLine(line) {
       i++;
     } else if (char === '"') {
       inQuotes = !inQuotes;
-    } else if (char === delimiter && !inQuotes) {
+    } else if (char === "," && !inQuotes) {
       result.push(current);
       current = "";
     } else {
@@ -243,7 +230,6 @@ function splitCSVLine(line) {
   result.push(current);
   return result;
 }
-
 
 function escapeHTML(str) {
   return String(str || "")
