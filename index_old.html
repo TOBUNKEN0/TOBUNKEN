@@ -6,7 +6,7 @@
 <title>3D Cultural Heritage Viewer</title>
 
 <script type="module"
-src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+src="https://unpkg.com">
 </script>
 
 <style>
@@ -17,6 +17,7 @@ body {
   font-family: sans-serif;
 }
 
+/* left-side 3D model viewer */
 #viewer-area {
   width: 70%;
   height: 100%;
@@ -28,6 +29,7 @@ model-viewer {
   height: 100%;
 }
 
+/* right-side description */
 #info-area {
   width: 30%;
   padding: 20px;
@@ -110,7 +112,6 @@ const description = document.getElementById("description");
 
 let models = [];
 
-
 fetch("DDB.csv")
   .then(response => {
     if (!response.ok) {
@@ -140,14 +141,15 @@ function setupModelSelector(models) {
 
   models.forEach(model => {
     const option = document.createElement("option");
-
     option.value = model.label || model.file;
     option.textContent = model.label || model.file;
     modelSelect.appendChild(option);
   });
 }
 
+
 function showModel(model) {
+
   viewer.src = model.file;
 
   description.innerHTML = `
@@ -194,7 +196,7 @@ modelSelect.addEventListener("change", function() {
 
 function parseCSV(text) {
   const rows = text.trim().split(/\r?\n/);
-  const headers = splitCSVLine(rows[0]).map(h => h.trim());
+  const headers = splitCSVLine(rows).map(h => h.trim());
 
   return rows.slice(1)
     .filter(row => row.trim() !== "")
@@ -235,6 +237,7 @@ function splitCSVLine(line) {
   result.push(current);
   return result;
 }
+
 
 function escapeHTML(str) {
   return String(str || "")
