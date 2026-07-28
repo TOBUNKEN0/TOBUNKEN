@@ -29,7 +29,7 @@ model-viewer {
   height: 100%;
 }
 
-/* right-side description */
+
 #info-area {
   width: 30%;
   padding: 20px;
@@ -112,6 +112,7 @@ const description = document.getElementById("description");
 
 let models = [];
 
+
 fetch("DDB.csv")
   .then(response => {
     if (!response.ok) {
@@ -135,14 +136,15 @@ fetch("DDB.csv")
     description.innerHTML = "<p>Could not load CSV data.</p>";
   });
 
-
 function setupModelSelector(models) {
   modelSelect.innerHTML = "";
 
   models.forEach(model => {
     const option = document.createElement("option");
-    option.value = model.label || model.file;
-    option.textContent = model.label || model.file;
+
+    const identifier = model.label || model.id || model.file;
+    option.value = identifier;
+    option.textContent = identifier;
     modelSelect.appendChild(option);
   });
 }
@@ -150,10 +152,11 @@ function setupModelSelector(models) {
 
 function showModel(model) {
 
-  viewer.src = model.file;
+  viewer.src = model.file || "";
+
 
   description.innerHTML = `
-    <h2>${escapeHTML(model.title_en || model.label)}</h2>
+    <h2>${escapeHTML(model.title_en || model.label || model.id)}</h2>
 
     <table>
       <tr>
@@ -188,15 +191,17 @@ function showModel(model) {
   `;
 }
 
+
 modelSelect.addEventListener("change", function() {
-  const selected = models.find(model => (model.label || model.file) === this.value);
+  const selected = models.find(model => (model.label || model.id || model.file) === this.value);
   if (!selected) return;
   showModel(selected);
 });
 
+
 function parseCSV(text) {
   const rows = text.trim().split(/\r?\n/);
-  const headers = splitCSVLine(rows).map(h => h.trim());
+  const headers = splitCSVLine(rows[0]).map(h => h.trim());
 
   return rows.slice(1)
     .filter(row => row.trim() !== "")
@@ -213,6 +218,7 @@ function parseCSV(text) {
 }
 
 function splitCSVLine(line) {
+  const delimiter = line.includes("\t") ? "\t" : ",";
   const result = [];
   let current = "";
   let inQuotes = false;
@@ -226,7 +232,7 @@ function splitCSVLine(line) {
       i++;
     } else if (char === '"') {
       inQuotes = !inQuotes;
-    } else if (char === "," && !inQuotes) {
+    } else if (char === delimiter && !inQuotes) {
       result.push(current);
       current = "";
     } else {
