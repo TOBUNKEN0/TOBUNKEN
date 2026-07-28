@@ -6,7 +6,7 @@
 <title>3D Cultural Heritage Viewer</title>
 
 <script type="module"
-src="https://unpkg.com">
+src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
 </script>
 
 <style>
@@ -30,23 +30,10 @@ model-viewer {
 
 #info-area {
   width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #f5f5f5;
-}
-
-#text-panel {
-  height: 60%;
   padding: 20px;
   overflow-y: auto;
+  background: #f5f5f5;
   box-sizing: border-box;
-}
-
-#map-panel {
-  height: 40%;
-  border-top: 1px solid #ccc;
-  background: #e9e9e9;
 }
 
 label {
@@ -59,12 +46,12 @@ label {
 select {
   width: 100%;
   padding: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   font-size: 16px;
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 table {
@@ -92,32 +79,28 @@ td {
 
 <body>
 
+<!-- left side -->
 <div id="viewer-area">
   <model-viewer
   id="viewer"
   src=""
   camera-controls
   auto-rotate
-  ar
-  ar-modes="scene-viewer webxr quick-look"
-  ar-scale="fixed"
-  xr-environment>
+  shadow-intensity="1"
+  camera-orbit="45deg 75deg 6m"
+  field-of-view="30deg"
+  ar>
 </model-viewer>
 </div>
 
+<!-- right side -->
 <div id="info-area">
+  <label for="modelSelect">Model</label>
+  <select id="modelSelect"></select>
 
-  <div id="text-panel">
-    <label for="modelSelect">Model</label>
-    <select id="modelSelect"></select>
-
-    <div id="description">
-      <p>Loading CSV data...</p>
-    </div>
+  <div id="description">
+    <p>Loading CSV data...</p>
   </div>
-
-  <div id="map-panel"></div>
-
 </div>
 
 <script>
@@ -126,6 +109,7 @@ const modelSelect = document.getElementById("modelSelect");
 const description = document.getElementById("description");
 
 let models = [];
+
 
 fetch("DDB.csv")
   .then(response => {
@@ -139,6 +123,7 @@ fetch("DDB.csv")
     setupModelSelector(models);
 
     if (models.length > 0) {
+
       showModel(models[0]);
     } else {
       description.innerHTML = "<p>No model data found in CSV.</p>";
@@ -149,11 +134,13 @@ fetch("DDB.csv")
     description.innerHTML = "<p>Could not load CSV data.</p>";
   });
 
+
 function setupModelSelector(models) {
   modelSelect.innerHTML = "";
 
   models.forEach(model => {
     const option = document.createElement("option");
+
     option.value = model.label || model.file;
     option.textContent = model.label || model.file;
     modelSelect.appendChild(option);
@@ -169,7 +156,7 @@ function showModel(model) {
     <table>
       <tr>
         <th>Object type</th>
-        <td>${escapeHTML(model.object_type)}</td>
+        <td>${escapeHTML(model.object_type_en)}</td>
       </tr>
       <tr>
         <th>Period</th>
